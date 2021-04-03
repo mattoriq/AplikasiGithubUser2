@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.aplikasigithubuser2.R
@@ -14,6 +15,7 @@ import com.dicoding.aplikasigithubuser2.apikey.Token
 import com.dicoding.aplikasigithubuser2.adapter.FollowingAdapter
 import com.dicoding.aplikasigithubuser2.databinding.FragmentFollowingBinding
 import com.dicoding.aplikasigithubuser2.user.UserListItem
+import com.dicoding.aplikasigithubuser2.viewmodel.FollowingViewModel
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -23,9 +25,10 @@ import java.lang.Exception
 class FollowingFragment : Fragment() {
 
     private lateinit var binding: FragmentFollowingBinding
-    private lateinit var adapter: FollowingAdapter
-    //private lateinit var followingViewModel: FollowingViewModel
-    val listUsers = MutableLiveData<ArrayList<UserListItem>>()
+    private lateinit var followingAdapter: FollowingAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var followingViewModel: FollowingViewModel
+    //val listUsers = MutableLiveData<ArrayList<UserListItem>>()
 
     companion object {
         private val TAG = FollowingFragment::class.java.simpleName
@@ -44,11 +47,8 @@ class FollowingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val rootView = inflater.inflate(R.layout.fragment_following, container, false)
-        val recyclerView = rootView.findViewById<RecyclerView>(R.id.rv_following)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = FollowingAdapter()
-        return rootView
+        val rootView = FragmentFollowingBinding.inflate(inflater, container, false)
+        return rootView.root
         //return inflater.inflate(R.layout.fragment_following, container, false)
     }
 
@@ -56,29 +56,35 @@ class FollowingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFollowingBinding.inflate(layoutInflater)
 
-        adapter = FollowingAdapter()
+        recyclerView = binding.rvFollowing
+        showRecyclerView()
         //binding.rvFollowing.layoutManager = LinearLayoutManager(requireActivity())
-        binding.rvFollowing.adapter = adapter
 
-        //followingViewModel = ViewModelProvider(requireActivity(), ViewModelProvider.NewInstanceFactory())[FollowingViewModel::class.java]
+        followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
         val username = arguments?.getString(EXTRA_USER)
 
         username?.let{
             Log.d(TAG,"setting User with username $it")
-            setUser(it)
+            followingViewModel.setUser(it)
         }
 
-        /*
         followingViewModel.getUser().observe(viewLifecycleOwner, { userItems ->
             if (userItems != null){
                 Log.d(TAG, "${(userItems.toString())} is here")
-                adapter.setData(userItems)
+                followingAdapter.setData(userItems)
             }
         })
 
-         */
     }
 
+    private fun showRecyclerView(){
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        followingAdapter = FollowingAdapter()
+        recyclerView.adapter = followingAdapter
+        recyclerView.setHasFixedSize(true)
+    }
+
+    /*
     private fun setUser(username: String){
         val listItems = ArrayList<UserListItem>()
 
@@ -116,8 +122,8 @@ class FollowingFragment : Fragment() {
                         listItems.add(userItems)
                     }
                     //listUsers.postValue(listItems)
-                    Log.d(TAG, listItems[0].username.toString())
-                    adapter.setData(listItems)
+                    Log.d(TAG, listItems[0].toString())
+                    followingAdapter.setData(listItems)
 
                 } catch (e: Exception) {
                     Log.d("Exception", e.message.toString())
@@ -134,5 +140,7 @@ class FollowingFragment : Fragment() {
             }
         })
     }
+
+     */
 
 }

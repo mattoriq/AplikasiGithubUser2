@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.aplikasigithubuser2.apikey.Token
+import com.dicoding.aplikasigithubuser2.fragments.FollowingFragment
 import com.dicoding.aplikasigithubuser2.user.UserListItem
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -52,6 +53,7 @@ class MainViewModel: ViewModel() {
                         userItems.avatarUrlLink = user.getString("avatar_url")
                         listItems.add(userItems)
                     }
+                    Log.d(TAG, listItems[0].toString())
                     listUsers.postValue(listItems)
                 } catch (e: Exception) {
                     Log.d("Exception", e.message.toString())
