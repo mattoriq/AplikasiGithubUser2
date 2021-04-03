@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AplikasiGithubUser2</string>
+    <string name="type_username">Type username</string>
+    <string name="username_hint">Type Username…</string>
+    <string name="search">Search</string>
+    <string name="github_link">https://github-link.com</string>
+    <string name="username">Username</string>
+    <string name="full_name">Full Name</string>
+    <string name="follower">%d Follower</string>
+    <string name="following">%d Following</string>
+    <string name="tab_follower">Follower List</string>
+    <string name="tab_following">Following List</string>
+    <string name="company">Company: %s</string>
+    <string name="location">Location: %s</string>
+    <string name="repo_totals">Total Repository: %d</string>
+    <string name="not_specified">not specified</string>
+    <string name="detail_title_bar">%s\'s Page</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
