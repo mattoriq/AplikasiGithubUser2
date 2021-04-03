@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dicoding.aplikasigithubuser2.apikey.Token
 import com.dicoding.aplikasigithubuser2.user.UserListItem
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -22,7 +23,8 @@ class MainViewModel: ViewModel() {
     fun setUser(username: String){
         val listItems = ArrayList<UserListItem>()
 
-        val apiKey = "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"
+        val token = Token()
+        val apiKey = token.getToken()
         val urlSearch = "https://api.github.com/search/users?q=${username}"
 
         val client = AsyncHttpClient()

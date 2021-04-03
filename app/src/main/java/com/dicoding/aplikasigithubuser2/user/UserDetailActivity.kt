@@ -8,9 +8,9 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.dicoding.aplikasigithubuser2.R
+import com.dicoding.aplikasigithubuser2.apikey.Token
 import com.dicoding.aplikasigithubuser2.databinding.ActivityUserDetailBinding
 import com.dicoding.aplikasigithubuser2.adapter.FollowPageAdapter
-import com.dicoding.aplikasigithubuser2.fragments.FollowingFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.loopj.android.http.AsyncHttpClient
@@ -47,7 +47,8 @@ class UserDetailActivity : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
 
         val username = intent.getStringExtra(EXTRA_USER)
-        val apiKey = "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"
+        val token = Token()
+        val apiKey = token.getToken()
         val urlUser = "https://api.github.com/users/${username}"
         val client = AsyncHttpClient()
         client.addHeader("Authorization", apiKey)

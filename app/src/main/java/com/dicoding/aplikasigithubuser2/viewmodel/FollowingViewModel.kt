@@ -49,6 +49,9 @@ class FollowingViewModel: ViewModel() {
                         userItems.username = user.getString("login")
                         userItems.githubLink = user.getString("html_url")
                         userItems.avatarUrlLink = user.getString("avatar_url")
+                        if (i == 0){
+                            Log.d(TAG, "${userItems.username}, ${userItems.githubLink}")
+                        }
                         listItems.add(userItems)
                     }
                     listUsers.postValue(listItems)
