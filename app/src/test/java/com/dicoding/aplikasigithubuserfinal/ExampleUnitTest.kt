@@ -1,4 +1,4 @@
-package com.dicoding.aplikasigithubuser2
+package com.dicoding.aplikasigithubuserfinal
 
 import org.junit.Test
 

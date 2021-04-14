@@ -1,10 +1,11 @@
-package com.dicoding.aplikasigithubuser2.viewmodel
+package com.dicoding.aplikasigithubuserfinal.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dicoding.aplikasigithubuser2.user.UserListItem
+import com.dicoding.aplikasigithubuserfinal.BuildConfig
+import com.dicoding.aplikasigithubuserfinal.user.UserListItem
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -22,13 +23,13 @@ class FollowingViewModel: ViewModel() {
     fun setUser(username: String){
         val listItems = ArrayList<UserListItem>()
 
-        val apiKey = "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"
+        val apiKey = BuildConfig.GITHUB_TOKEN
         val urlSearch = "https://api.github.com/users/${username}/following"
 
-        Log.d(TAG, urlSearch)
+        //Log.d(TAG, urlSearch)
 
         val client = AsyncHttpClient()
-        client.addHeader("Authorization", apiKey)
+        client.addHeader("Authorization", "token $apiKey")
         client.addHeader("User-Agent", "request")
 
         client.get(urlSearch, object: AsyncHttpResponseHandler(){
@@ -40,7 +41,7 @@ class FollowingViewModel: ViewModel() {
                 try {
                     Log.d(TAG,"onSuccess starting...")
                     val result = String(responseBody)
-                    Log.d(TAG, result)
+                    //Log.d(TAG, result)
                     val list = JSONArray(result)
 
                     for (i in 0 until list.length()){
@@ -49,9 +50,6 @@ class FollowingViewModel: ViewModel() {
                         userItems.username = user.getString("login")
                         userItems.githubLink = user.getString("html_url")
                         userItems.avatarUrlLink = user.getString("avatar_url")
-                        if (i == 0){
-                            Log.d(TAG, "${userItems.username}, ${userItems.githubLink}")
-                        }
                         listItems.add(userItems)
                     }
                     listUsers.postValue(listItems)
@@ -61,19 +59,16 @@ class FollowingViewModel: ViewModel() {
             }
 
             override fun onFailure(
-                statusCode: Int,
-                headers: Array<out Header>,
-                responseBody: ByteArray,
-                error: Throwable
+                    statusCode: Int,
+                    headers: Array<out Header>,
+                    responseBody: ByteArray,
+                    error: Throwable
             ) {
                 Log.d("onFailure", error.message.toString())
             }
-
         })
     }
 
-    fun getUser(): LiveData<ArrayList<UserListItem>> {
-        return listUsers
-    }
+    fun getUser(): LiveData<ArrayList<UserListItem>> = listUsers
 
 }

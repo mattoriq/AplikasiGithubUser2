@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">AplikasiGithubUser2</string>
-    <string name="type_username">Type username</string>
+    <string name="app_name">Aplikasi Github User Final</string>
     <string name="username_hint">Type Username…</string>
     <string name="search">Search</string>
     <string name="github_link">https://github-link.com</string>
@@ -14,8 +13,21 @@
     <string name="location">Location: %s</string>
     <string name="repo_totals">Total Repository: %d</string>
     <string name="not_specified">not specified</string>
-    <string name="detail_title_bar">%s\'s Page</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="detail_title_bar">%s\'s Profile</string>
+    <string name="change_language">Change Language</string>
+    <string name="not_found">Username not found</string>
+    <string name="favorite">favorite</string>
+    <string name="fav_users">Favorite Users</string>
+    <string name="preference">Preferences</string>
+    <string name="reminder_key">remind"</string>
+    <string name="add_fav_success">Adding Favorite Successful</string>
+    <string name="add_fav_failed">Adding Favorite Failed</string>
+    <string name="remove_fav_success">Removing Favorite Successful</string>
+    <string name="remove_fav_failed">Removing Favorite Failed</string>
+    <string name="remind_up">Reminder Set Up</string>
+    <string name="remind_down">Reminder Cancelled</string>
+    <string name="remind_message">Reminder to Open Github User App</string>
+    <string name="splash_screen_icon">Splash Screen</string>
+    <string name="reminder_clue">Reminder at 9 AM</string>
+    <string name="ch_lan_key">ch_lan</string>
 </resources>

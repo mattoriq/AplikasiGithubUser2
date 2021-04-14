@@ -1,4 +1,4 @@
-package com.dicoding.aplikasigithubuser2.user
+package com.dicoding.aplikasigithubuserfinal.user
 
 class UserListItem {
     var username: String? = null

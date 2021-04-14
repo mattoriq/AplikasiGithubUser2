@@ -1,16 +1,15 @@
-package com.dicoding.aplikasigithubuser2.adapter
+package com.dicoding.aplikasigithubuserfinal.adapter
 
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dicoding.aplikasigithubuser2.R
-import com.dicoding.aplikasigithubuser2.databinding.UserListViewBinding
-import com.dicoding.aplikasigithubuser2.user.UserDetailActivity
-import com.dicoding.aplikasigithubuser2.user.UserListItem
+import com.dicoding.aplikasigithubuserfinal.R
+import com.dicoding.aplikasigithubuserfinal.databinding.UserListViewBinding
+import com.dicoding.aplikasigithubuserfinal.user.UserDetailActivity
+import com.dicoding.aplikasigithubuserfinal.user.UserListItem
 import com.squareup.picasso.Picasso
 
 class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -34,7 +33,7 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
             itemView.setOnClickListener{
                 val viewUserDetailIntent = Intent(it.context, UserDetailActivity::class.java)
-                Log.d(TAG, extraUser.toString()?: "null")
+                Log.d(TAG, extraUser.toString())
                 viewUserDetailIntent.putExtra(UserDetailActivity.EXTRA_USER, extraUser.toString())
 
                 it.context.startActivity(viewUserDetailIntent)

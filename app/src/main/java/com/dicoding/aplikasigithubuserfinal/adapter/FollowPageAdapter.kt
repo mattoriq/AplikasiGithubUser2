@@ -1,10 +1,10 @@
-package com.dicoding.aplikasigithubuser2.adapter
+package com.dicoding.aplikasigithubuserfinal.adapter
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.dicoding.aplikasigithubuser2.fragments.FollowerFragment
-import com.dicoding.aplikasigithubuser2.fragments.FollowingFragment
+import com.dicoding.aplikasigithubuserfinal.fragments.FollowerFragment
+import com.dicoding.aplikasigithubuserfinal.fragments.FollowingFragment
 
 class FollowPageAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity) {
 
@@ -16,7 +16,7 @@ class FollowPageAdapter(activity: AppCompatActivity): FragmentStateAdapter(activ
         var fragment: Fragment? = null
         when(position){
             0 -> fragment = FollowingFragment.newInstance(username)
-            1 -> fragment = FollowerFragment()
+            1 -> fragment = FollowerFragment.newInstance(username)
         }
         return fragment as Fragment
     }
