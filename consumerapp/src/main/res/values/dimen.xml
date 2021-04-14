@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_big">16dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="circle_image_size_small">72dp</dimen>
+    <dimen name="circle_image_size_big">120dp</dimen>
+    <dimen name="size_text_big">24sp</dimen>
+    <dimen name="size_text_medium">18sp</dimen>
+    <dimen name="size_text_small">14sp</dimen>
+</resources>

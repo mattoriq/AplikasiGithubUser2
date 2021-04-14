@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="@string/reminder_key"
+        android:title="@string/reminder_clue"
+        android:iconSpaceReserved="true"
+        android:icon="@drawable/ic_baseline_alarm_24"/>
+
+    <Preference
+        app:key="@string/ch_lan_key"
+        android:title="@string/change_language"
+        android:iconSpaceReserved="true"
+        android:icon="@drawable/ic_baseline_language_24"/>
+
+
+</PreferenceScreen>

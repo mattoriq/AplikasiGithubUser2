@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="@dimen/padding_big"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar_img"
+        android:layout_width="@dimen/circle_image_size_small"
+        android:layout_height="@dimen/circle_image_size_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_text_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/avatar_img"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/padding_big"
+        android:layout_marginTop="@dimen/padding_small"
+        tools:text="@string/username" />
+
+    <TextView
+        android:id="@+id/tv_github_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/avatar_img"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+        android:textSize="@dimen/size_text_small"
+        android:layout_marginStart="@dimen/padding_big"
+        android:layout_marginTop="@dimen/padding_medium"
+        tools:text="@string/github_link" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

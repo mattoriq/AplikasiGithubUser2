@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ConsumerApp</string>
+    <string name="github_link">https://github-link.com</string>
+    <string name="username">Username</string>
+</resources>

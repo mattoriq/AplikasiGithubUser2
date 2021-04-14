@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AplikasiGithubUser2</string>
+    <string name="username_hint">Masukkan Username…</string>
+    <string name="search">Cari</string>
+    <string name="github_link">https://github-link.com</string>
+    <string name="username">Username</string>
+    <string name="full_name">Name Panjang</string>
+    <string name="follower">%d Pengikut</string>
+    <string name="following">Mengikuti %d</string>
+    <string name="tab_follower">Daftar Pengikut</string>
+    <string name="tab_following">Daftar Mengikuti</string>
+    <string name="company">Perusahaan: %s</string>
+    <string name="location">Lokasi: %s</string>
+    <string name="repo_totals">Total Repositori: %d</string>
+    <string name="not_specified">tidak ditemukan</string>
+    <string name="detail_title_bar">Profil %s</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="not_found">Username tidak ditemukan</string>
+    <string name="favorite">Favorit</string>
+    <string name="fav_users">Pengguna Favorit</string>
+    <string name="preference">Preferensi</string>
+    <string name="reminder_key">remind</string>
+    <string name="add_fav_success">Menambahkan Favorit Berhasil</string>
+    <string name="add_fav_failed">Menambahkan Favorit Gagal</string>
+    <string name="remove_fav_success">Menghapus Favorit Berhasil</string>
+    <string name="remove_fav_failed">Menghapus Favorit Gagal</string>
+    <string name="remind_up">Pengingat Aktif</string>
+    <string name="remind_down">Pengingat Mati</string>
+    <string name="remind_message">Pengingat untuk Membuka Aplikasi User Github</string>
+    <string name="splash_screen_icon">Layar Splash</string>
+    <string name="reminder_clue">Pengingat pada 9 Pagi</string>
+    <string name="ch_lan_key">ch_lan</string>
+</resources>
